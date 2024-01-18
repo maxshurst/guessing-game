@@ -4,9 +4,15 @@ const closeBox = document.getElementById('closeb');
 const close2Box = document.getElementById('closeb2');
 
 
+
+
 const newNumber = Math.ceil(Math.random()*1000);
 
 numberBox.addEventListener('change',checkNumber);
+
+
+
+
 
 function checkNumber() {
     const guess = numberBox.value;
@@ -57,19 +63,44 @@ else {
 
 
 
-const inputBox = document.getElementById('input');
+
+
+
+
+
+const inputBox = document.getElementById('numberinput');
 const outputBox = document.getElementById('output');
 
 
-inputBox.addEventListener('change',mathfunc);
-
-function mathfunc() {
-
-const input = inputBox.value;
+inputBox.addEventListener('change',computeOutput);
+functionSelector.addEventListener('change', computeOutput);
 
 
-outputBox.innerText = input**2;
+//function mathfunc() {
+
+//const input = inputBox.value;
+
+
+//outputBox.innerText = input**2;
+//}
 
 
 
-}
+function computeOutput() {
+    var N = inputBox.value;
+ 
+    if (functionSelector.value === "double") {
+      outputBox.innerText = N * 2;    
+    }
+    else if (functionSelector.value === "square") {
+       outputBox.innerText = N**2; 
+    }
+    else if (functionSelector.value === "2x+7") {
+        outputBox.innerText = N * 2 +7; 
+    }
+    else if (functionSelector.value === "cube") {
+       outputBox.innerText = N**3;
+    }
+    
+  }  
+  
